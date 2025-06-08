@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChloeGLaze</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #fff, #f9f9f9);
+      font-family: "Times New Roman", serif;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 30px;
+      z-index: 1000;
+      background: transparent;
+      font-size: 48px;
+      font-weight: bold;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+    }
+
+    header img {
+      height: 50px;
+      width: 50px;
+      margin-right: 20px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-top: 150px;
+      max-width: 1400px;
+      margin: auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .photo {
+      margin: 15px;
+      transform: translateX(var(--offset)) translateY(var(--vertical-offset)) rotate(var(--rotation));
+      transition: transform 0.3s ease;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .photo:hover {
+      transform: translateX(var(--offset)) translateY(var(--vertical-offset)) rotate(var(--rotation)) scale(1.05);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 3px;
+    }
+
+    /* Different sizes for eclectic layout */
+    .photo.small {
+      flex: 0 1 25%;
+      max-width: 280px;
+    }
+
+    .photo.medium {
+      flex: 0 1 35%;
+      max-width: 400px;
+    }
+
+    .photo.large {
+      flex: 0 1 45%;
+      max-width: 520px;
+    }
+
+    .photo.extra-large {
+      flex: 0 1 55%;
+      max-width: 650px;
+    }
+
+    /* Tablet view */
+    @media (max-width: 1024px) {
+      header {
+        font-size: 36px;
+        letter-spacing: 6px;
+        padding: 25px;
+      }
+
+      header img {
+        height: 40px;
+        width: 40px;
+        margin-right: 15px;
+      }
+
+      .gallery {
+        max-width: 900px;
+        padding-top: 120px;
+      }
+
+      .photo.small {
+        flex: 0 1 40%;
+        max-width: 300px;
+      }
+
+      .photo.medium {
+        flex: 0 1 50%;
+        max-width: 350px;
+      }
+
+      .photo.large {
+        flex: 0 1 60%;
+        max-width: 400px;
+      }
+
+      .photo.extra-large {
+        flex: 0 1 80%;
+        max-width: 500px;
+      }
+    }
+
+    /* Mobile view */
+    @media (max-width: 768px) {
+      header {
+        font-size: 24px;
+        letter-spacing: 3px;
+        padding: 20px;
+      }
+
+      header img {
+        height: 30px;
+        width: 30px;
+        margin-right: 10px;
+      }
+
+      .gallery {
+        padding-top: 100px;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .photo {
+        flex: none !important;
+        width: 90%;
+        max-width: 400px;
+        margin: 10px 0;
+        transform: none !important;
+      }
+
+      .photo:hover {
+        transform: scale(1.02) !important;
+      }
+
+      .photo.small,
+      .photo.medium,
+      .photo.large,
+      .photo.extra-large {
+        flex: none;
+        max-width: 400px;
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        font-size: 18px;
+        letter-spacing: 2px;
+        padding: 15px;
+      }
+
+      .photo {
+        width: 95%;
+        max-width: 350px;
+      }
+
+      .photo.small,
+      .photo.medium,
+      .photo.large,
+      .photo.extra-large {
+        width: 95%;
+        max-width: 350px;
+      }
+    }
+
+    /* Lightbox styles */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      display: none;
+      cursor: url('https://www.skarule.com/a09533edaf2be545284d.svg'), auto;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      border-radius: 5px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .photo img {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body id="top">
+  <header>
+    <a href="#top" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+      <img src="assets/IMG_20250528_173402.jpg" alt="Logo" />
+      CHLOEGLAZE
+    </a>
+  </header>
+
+  <main class="gallery">
+    <div class="photo large" style="--offset: -40px; --vertical-offset: 20px; --rotation: -2deg;">
+      <img src="assets/IMG_20250408_215458.jpg" alt="Photo 1" />
+    </div>
+    <div class="photo medium" style="--offset: 60px; --vertical-offset: -30px; --rotation: 1.5deg;">
+      <img src="assets/IMG_20250528_111740.jpg" alt="Photo 2" />
+    </div>
+    <div class="photo extra-large" style="--offset: -50px; --vertical-offset: 40px; --rotation: -1deg;">
+      <img src="assets/IMG_20250528_113007_edit_2057079261625169.jpg" alt="Photo 3" />
+    </div>
+    <div class="photo small" style="--offset: 30px; --vertical-offset: -20px; --rotation: 2deg;">
+      <img src="assets/IMG_20250528_115214_edit_2053504230804881.jpg" alt="Photo 4" />
+    </div>
+    <div class="photo medium" style="--offset: -35px; --vertical-offset: 50px; --rotation: -1.5deg;">
+      <img src="assets/IMG_20250528_115341_edit_2061745719343207.jpg" alt="Photo 5" />
+    </div>
+    <div class="photo large" style="--offset: 70px; --vertical-offset: -10px; --rotation: 0.5deg;">
+      <img src="assets/IMG_20250528_122157.jpg" alt="Photo 6" />
+    </div>
+    <div class="photo small" style="--offset: -25px; --vertical-offset: 30px; --rotation: -2.5deg;">
+      <img src="assets/IMG_20250408_215458.jpg" alt="Photo 7" />
+    </div>
+    <div class="photo extra-large" style="--offset: 45px; --vertical-offset: -40px; --rotation: 1deg;">
+      <img src="assets/IMG_20250528_111740.jpg" alt="Photo 8" />
+    </div>
+    <div class="photo medium" style="--offset: -60px; --vertical-offset: 25px; --rotation: -0.5deg;">
+      <img src="assets/IMG_20250528_113007_edit_2057079261625169.jpg" alt="Photo 9" />
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const photos = document.querySelectorAll('.photo img');
+
+    // Add click event to all images
+    photos.forEach(img => {
+      img.addEventListener('click', function() {
+        lightboxImg.src = this.src;
+        lightboxImg.alt = this.alt;
+        lightbox.classList.add('active');
+      });
+    });
+
+    // Close lightbox when clicking anywhere
+    lightbox.addEventListener('click', function() {
+      lightbox.classList.remove('active');
+    });
+
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        lightbox.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
