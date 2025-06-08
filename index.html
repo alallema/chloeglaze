@@ -4,11 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ChloeGLaze</title>
+  <link rel="icon" type="image/jpg" href="/assets/IMG_20250528_173402.jpg" />
   <style>
     body {
       margin: 0;
       background: linear-gradient(to bottom, #fff, #f9f9f9);
-      font-family: "Times New Roman", serif;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: bold;
       overflow-x: hidden;
     }
 
@@ -17,9 +19,10 @@
       top: 0;
       left: 0;
       padding: 30px;
+      padding-top: 15px;
       z-index: 1000;
       background: transparent;
-      font-size: 48px;
+      font-size: 62px;
       font-weight: bold;
       letter-spacing: 8px;
       text-transform: uppercase;
@@ -39,7 +42,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      padding-top: 150px;
+      padding-top: 45px;
       max-width: 1400px;
       margin: auto;
       padding-left: 20px;
@@ -50,12 +53,10 @@
       margin: 15px;
       transform: translateX(var(--offset)) translateY(var(--vertical-offset)) rotate(var(--rotation));
       transition: transform 0.3s ease;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     }
 
     .photo:hover {
       transform: translateX(var(--offset)) translateY(var(--vertical-offset)) rotate(var(--rotation)) scale(1.05);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
     }
 
     .photo img {
@@ -212,7 +213,6 @@
       max-height: 90%;
       object-fit: contain;
       border-radius: 5px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     }
 
     .photo img {
@@ -223,37 +223,37 @@
 <body id="top">
   <header>
     <a href="#top" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
-      <img src="assets/IMG_20250528_173402.jpg" alt="Logo" />
+      <!-- <img src="assets/IMG_20250528_173402.jpg" alt="Logo" /> -->
       CHLOEGLAZE
     </a>
   </header>
 
   <main class="gallery">
-    <div class="photo large" style="--offset: -40px; --vertical-offset: 20px; --rotation: -2deg;">
+    <div class="photo large" style="--offset: -40px; --vertical-offset: 20px;">
       <img src="assets/IMG_20250408_215458.jpg" alt="Photo 1" />
     </div>
-    <div class="photo medium" style="--offset: 60px; --vertical-offset: -30px; --rotation: 1.5deg;">
+    <div class="photo medium" style="--offset: 60px; --vertical-offset: -30px;">
       <img src="assets/IMG_20250528_111740.jpg" alt="Photo 2" />
     </div>
-    <div class="photo extra-large" style="--offset: -50px; --vertical-offset: 40px; --rotation: -1deg;">
+    <div class="photo extra-large" style="--offset: -50px; --vertical-offset: 40px;">
       <img src="assets/IMG_20250528_113007_edit_2057079261625169.jpg" alt="Photo 3" />
     </div>
-    <div class="photo small" style="--offset: 30px; --vertical-offset: -20px; --rotation: 2deg;">
-      <img src="assets/IMG_20250528_115214_edit_2053504230804881.jpg" alt="Photo 4" />
+    <div class="photo small" style="--offset: 30px; --vertical-offset: -20px;">
+      <img src="assets/IMG_20250528_124011_edit_2057142030861097.jpg" alt="Photo 4" />
     </div>
-    <div class="photo medium" style="--offset: -35px; --vertical-offset: 50px; --rotation: -1.5deg;">
+    <div class="photo medium" style="--offset: -35px; --vertical-offset: 50px;">
       <img src="assets/IMG_20250528_115341_edit_2061745719343207.jpg" alt="Photo 5" />
     </div>
-    <div class="photo large" style="--offset: 70px; --vertical-offset: -10px; --rotation: 0.5deg;">
+    <div class="photo large" style="--offset: 70px; --vertical-offset: -10px;">
       <img src="assets/IMG_20250528_122157.jpg" alt="Photo 6" />
     </div>
-    <div class="photo small" style="--offset: -25px; --vertical-offset: 30px; --rotation: -2.5deg;">
-      <img src="assets/IMG_20250408_215458.jpg" alt="Photo 7" />
+    <div class="photo small" style="--offset: -25px; --vertical-offset: 30px;">
+      <img src="assets/IMG_20250528_115214_edit_2053504230804881.jpg" alt="Photo 7" />
     </div>
-    <div class="photo extra-large" style="--offset: 45px; --vertical-offset: -40px; --rotation: 1deg;">
+    <div class="photo extra-large" style="--offset: 45px; --vertical-offset: -40px;">
       <img src="assets/IMG_20250528_125941_edit_2446079358641331.jpg" alt="Photo 8" />
     </div>
-    <div class="photo medium" style="--offset: -60px; --vertical-offset: 25px; --rotation: -0.5deg;">
+    <div class="photo medium" style="--offset: -60px; --vertical-offset: 25px;">
       <img src="assets/IMG_20250528_113007_edit_2057079261625169.jpg" alt="Photo 9" />
     </div>
   </main>
