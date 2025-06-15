@@ -41,7 +41,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      padding-top: 45px;
+      padding-top: 27px;
       max-width: 1400px;
       margin: auto;
       padding-left: 20px;
@@ -49,7 +49,7 @@
     }
 
     .photo {
-      margin: 15px;
+      margin: 30px;
       transform: translateX(var(--offset)) translateY(var(--vertical-offset)) rotate(var(--rotation));
       transition: transform 0.3s ease;
     }
@@ -71,9 +71,17 @@
       max-width: 280px;
     }
 
+    .photo.small-plus {
+      max-width: 330px;
+    }
+
     .photo.medium {
       flex: 0 1 35%;
       max-width: 400px;
+    }
+
+    .photo.medium-plus {
+      max-width: 450px;
     }
 
     .photo.large {
@@ -83,7 +91,12 @@
 
     .photo.extra-large {
       flex: 0 1 55%;
-      max-width: 650px;
+      max-width: 600px;
+    }
+
+    .photo.align-bottom {
+      align-self: flex-end;
+      margin-top: 0;
     }
 
     /* Tablet view */
@@ -231,32 +244,29 @@
   </header>
 
   <main class="gallery">
-    <div class="photo large" style="--offset: -40px; --vertical-offset: 20px;">
-      <img src="assets/IMG_20250408_215458.jpg" alt="Photo 1" />
+    <div class="photo extra-large" style="--offset: -40px; --vertical-offset: 20px;">
+      <img src="assets/IMG_20250408_215458-2.jpg" alt="Photo 1" />
     </div>
-    <div class="photo medium" style="--offset: 60px; --vertical-offset: -30px;">
-      <img src="assets/IMG_20250528_111740.jpg" alt="Photo 2" />
+    <div class="photo medium align-bottom" style="--offset: 60px; --vertical-offset: -30px;">
+      <img src="assets/IMG_20250528_111740-2.jpg" alt="Photo 2" />
     </div>
-    <div class="photo extra-large" style="--offset: -50px; --vertical-offset: 40px;">
-      <img src="assets/IMG_20250528_113007_edit_2057079261625169.jpg" alt="Photo 3" />
+    <div class="photo medium medium-plus" style="--offset: -50px; --vertical-offset: 40px;">
+      <img src="assets/IMG_20250528_113007_edit_2057079261625169-2.jpg" alt="Photo 3" />
     </div>
-    <div class="photo small" style="--offset: 30px; --vertical-offset: -20px;">
-      <img src="assets/IMG_20250528_124011_edit_2057142030861097.jpg" alt="Photo 4" />
+    <div class="photo extra-large align-bottom" style="--offset: 30px; --vertical-offset: -20px;">
+      <img src="assets/IMG_20250528_124011_edit_2057142030861097-2.jpg" alt="Photo 4" />
     </div>
-    <div class="photo medium" style="--offset: -35px; --vertical-offset: 50px;">
-      <img src="assets/IMG_20250528_115341_edit_2061745719343207.jpg" alt="Photo 5" />
+    <div class="photo large align-bottom" style="--offset: -35px; --vertical-offset: 50px;">
+      <img src="assets/IMG_20250528_115341_edit_2061745719343207-2.jpg" alt="Photo 5" />
     </div>
-    <div class="photo large" style="--offset: 70px; --vertical-offset: -10px;">
+    <div class="photo small-plus" style="--offset: 70px; --vertical-offset: -10px;">
       <img src="assets/IMG_20250528_122157.jpg" alt="Photo 6" />
     </div>
-    <div class="photo small" style="--offset: -25px; --vertical-offset: 30px;">
+    <div class="photo extra-large" style="--offset: -25px; --vertical-offset: 30px;">
       <img src="assets/IMG_20250528_115214_edit_2053504230804881.jpg" alt="Photo 7" />
     </div>
     <div class="photo extra-large" style="--offset: 45px; --vertical-offset: -40px;">
       <img src="assets/IMG_20250528_125941_edit_2446079358641331.jpg" alt="Photo 8" />
-    </div>
-    <div class="photo medium" style="--offset: -60px; --vertical-offset: 25px;">
-      <img src="assets/IMG_20250528_113007_edit_2057079261625169.jpg" alt="Photo 9" />
     </div>
   </main>
 
